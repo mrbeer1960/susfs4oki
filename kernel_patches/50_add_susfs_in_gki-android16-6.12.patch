@@ -1472,7 +1472,7 @@ index c79267d5f..00d1fa464 100644
  	}
  
  	start = vma->vm_start;
-@@ -1304,6 +1353,13 @@ static int show_smap(struct seq_file *m, void *v)
+@@ -1330,5 +1330,12 @@ static int show_smap(struct seq_file *m, void *v)
  	struct vm_area_struct *vma = v;
  	struct mem_size_stats mss = {};
  
@@ -1483,7 +1483,7 @@ index c79267d5f..00d1fa464 100644
 +	}
 +#endif // #ifdef CONFIG_KSU_SUSFS_SUS_MAP
 +
- 	if (!vma_pages(vma))
+ 	if (!vma_data_pages(vma))
  		goto show_pad;
  
 @@ -1363,7 +1412,15 @@ static int show_smaps_rollup(struct seq_file *m, void *v)
